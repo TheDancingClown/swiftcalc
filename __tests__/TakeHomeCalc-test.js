@@ -1,6 +1,10 @@
 import TakeHomeCalc from '../src/TakeHomeCalc'
+import PayeCalc from '../src/PayeCalc'
+import Class1Calc from '../src/Class1Calc';
 
-const calc = new TakeHomeCalc()
+const nICalc = new Class1Calc(), 
+payeCalc = new PayeCalc(), 
+calc = new TakeHomeCalc(payeCalc, nICalc)
 
 it('has no deduction under the personal allowance', () => {
   expect(calc.takeHome(5000)).toBe(5000);

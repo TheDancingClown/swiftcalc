@@ -1,11 +1,8 @@
-const { default: Class1Calc } = require("./Class1Calc");
-const { default: PayeCalc } = require("./PayeCalc");
-
 class TakeHomeCalc {
 
-  constructor() {
-    this.payeCalc = new PayeCalc()
-    this.class1Calc = new Class1Calc()
+  constructor(payeCalc, class1Calc) {
+    this.payeCalc = payeCalc
+    this.class1Calc = class1Calc
   };
 
   takeHome(gross) {
