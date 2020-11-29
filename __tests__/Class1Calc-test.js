@@ -16,3 +16,7 @@ it('returns 12% deduction above the PT', () => {
 it('returns an additional 2% above the UEL', () => {
   expect(calc.class1NI(60000)).toBe(5060)
 })
+
+it('returns the NI for the primary band', () => {
+  expect(calc.primaryBandNI()).toBe(4860)
+})

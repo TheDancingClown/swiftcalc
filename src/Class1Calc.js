@@ -7,17 +7,25 @@ class Class1Calc {
 
     class1NI(gross) {
       if(gross > this.class1Thresholds["UEL"]) {
-        var upper = (gross - this.class1Thresholds["UEL"]) * this.class1Rates["upper"]
-        var primary = (this.class1Thresholds["UEL"] - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
-        return(upper + primary)
+        return(this.aboveUEL(gross) + this.primaryBandNI())
       } else if(gross > this.class1Thresholds["PT"]) {
-        return (gross - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
-      }
+        return this.abovePT(gross)
+      } else {
       return 0.00
+      }
     }
 
-    
-  
+    primaryBandNI() {
+      return (this.class1Thresholds["UEL"] - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
+    }
+
+    aboveUEL(gross) {
+      return (gross - this.class1Thresholds["UEL"]) * this.class1Rates["upper"]
+    }
+
+    abovePT(gross) {
+      return (gross - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
+    }
 
 }
 
