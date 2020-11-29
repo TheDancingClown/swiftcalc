@@ -17,3 +17,11 @@ it('deducts tax at higher rate', () => {
   expect(calc.paye(55000)).toBe(9500)
 })
 
+it('reduces the personal allowance', () => {
+  expect(calc.paye(115000)).toBe(36500)
+})
+
+it('returns the tax for the basic band', () => {
+  expect(calc.basicBandTax()).toBe(7500)
+})
+
