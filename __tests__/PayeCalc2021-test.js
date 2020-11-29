@@ -1,9 +1,9 @@
 const { clearUpdateCacheExperimentalAsync } = require("expo-updates");
 const { interpolate } = require("react-native-reanimated");
 
-import PayeCalc from '../src/PayeCalc'
+import PayeCalc2021 from '../src/2021/PayeCalc2021'
 
-const calc = new PayeCalc()
+const calc = new PayeCalc2021()
 
 it('returns zero deduction under the personal allowance', () => {
   expect(calc.paye(5000)).toBe(0);

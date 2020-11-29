@@ -1,9 +1,9 @@
 import TakeHomeCalc from '../src/TakeHomeCalc'
-import PayeCalc from '../src/PayeCalc'
+import PayeCalc2021 from '../src/2021/PayeCalc2021'
 import Class1Calc2021 from '../src/2021/Class1Calc2021';
 
 const nICalc = new Class1Calc2021(), 
-payeCalc = new PayeCalc(), 
+payeCalc = new PayeCalc2021(), 
 calc = new TakeHomeCalc(payeCalc, nICalc)
 
 it('has no deduction under the personal allowance', () => {

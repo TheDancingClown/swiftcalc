@@ -1,9 +1,9 @@
 class PayeCalc {
 
   constructor() {
-    this.payeThresholds = {"PA": 12500, "basic": 50000, "higher": 150000};
-    this.payeRates = {"basic": 0.20, "higher": 0.40, "additional": 0.45};
-    this.allowanceReducer = {"min": 100000, "max": 1250000};
+    this.payeThresholds = {};
+    this.payeRates = {};
+    this.allowanceReducer = {};
   };
 
   paye(gross) {
