@@ -6,5 +6,9 @@ import Class1Calc from '../src/Class1Calc'
 const calc = new Class1Calc()
 
 it('returns zero deduction under the threshold', () => {
-  expect(calc.class1NI()).toBe(0.00);
+  expect(calc.class1NI(5000)).toBe(0.00);
 });
+
+it('returns 12% deduction above the PT', () => {
+  expect(calc.class1NI(10000)).toBe(60)
+})
