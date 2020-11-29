@@ -1,7 +1,11 @@
 class PayeCalc {
 
   paye(gross) {
-    return 0
+    if(gross>12500) {
+      return (gross-12500) * 0.2
+    } else {
+      return 0
+    }
   }
 
 
