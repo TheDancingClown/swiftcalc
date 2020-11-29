@@ -13,8 +13,10 @@ class PayeCalc {
       return this._aboveBasic(gross) + this._basicBandTax()
     } else if(gross > this.payeThresholds["PA"]) {
       return this._aboveAllowance(gross)
-    } else {
+    } else if(gross > 0) {
       return 0
+    } else {
+      return "Enter a positive value"
     };
   };
 

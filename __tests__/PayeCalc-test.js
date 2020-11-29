@@ -15,7 +15,7 @@ it('deducts tax at basic rate', () => {
 
 it('deducts tax at higher rate', () => {
   expect(calc.paye(55000)).toBe(9500)
-})
+});
 
 it('reduces the personal allowance', () => {
   expect(calc.paye(115000)).toBe(36500)
@@ -28,4 +28,9 @@ it('the allowance cannot be less than zero', () => {
 it('deducts tax at additional rate', () => {
   expect(calc.paye(175000)).toBe(63750)
 });
+
+it('will not accept a negative value', () => {
+  expect(calc.paye(-5000)).toBe("Enter a positive value");
+});
+
 
