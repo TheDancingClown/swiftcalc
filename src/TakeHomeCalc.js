@@ -9,7 +9,7 @@ class TakeHomeCalc {
   };
 
   takeHome(gross) {
-    return gross - this.class1Calc.class1NI(gross) + this.payeCalc.paye(gross)
+    return gross - this.class1Calc.class1NI(gross) - this.payeCalc.paye(gross)
   }
 
 };
