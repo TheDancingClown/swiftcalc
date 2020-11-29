@@ -11,4 +11,8 @@ it('returns zero deduction under the threshold', () => {
 
 it('returns 12% deduction above the PT', () => {
   expect(calc.class1NI(10000)).toBe(60)
+});
+
+it('returns an additional 2% above the UEL', () => {
+  expect(calc.class1NI(60000)).toBe(5060)
 })
