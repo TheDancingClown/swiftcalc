@@ -21,7 +21,4 @@ it('will not accept a negative value', () => {
   expect(calc.class1NI(-5000)).toBe("Enter a positive value");
 });
 
-it('returns the NI for the primary band', () => {
-  expect(calc.primaryBandNI()).toBe(4860);
-});
 

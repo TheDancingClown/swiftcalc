@@ -7,9 +7,9 @@ class Class1Calc {
 
     class1NI(gross) {
       if(gross > this.class1Thresholds["UEL"]) {
-        return(this.aboveUEL(gross) + this.primaryBandNI())
+        return(this._aboveUEL(gross) + this._primaryBandNI())
       } else if(gross > this.class1Thresholds["PT"]) {
-        return this.abovePT(gross)
+        return this._abovePT(gross)
       } else if(gross > 0) {
         return 0
       } else {
@@ -17,15 +17,15 @@ class Class1Calc {
       }
     }
 
-    primaryBandNI() {
+    _primaryBandNI() {
       return (this.class1Thresholds["UEL"] - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
     }
 
-    aboveUEL(gross) {
+    _aboveUEL(gross) {
       return (gross - this.class1Thresholds["UEL"]) * this.class1Rates["upper"]
     }
 
-    abovePT(gross) {
+    _abovePT(gross) {
       return (gross - this.class1Thresholds["PT"]) * this.class1Rates["primary"]
     }
 

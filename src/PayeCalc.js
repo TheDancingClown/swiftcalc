@@ -8,34 +8,36 @@ class PayeCalc {
 
   paye(gross) {
     if(gross > this.payeThresholds["basic"]) {
-      return this.aboveBasic(gross) + this.basicBandTax()
+      return this._aboveBasic(gross) + this._basicBandTax()
     } else if(gross > this.payeThresholds["PA"]) {
-      return this.aboveAllowance(gross)
+      return this._aboveAllowance(gross)
     } else {
       return 0
     };
   };
 
-  basicBandTax() {
+  _basicBandTax() {
     return (this.payeThresholds["basic"] - this.payeThresholds["PA"]) * this.payeRates["basic"]
   };
 
-  aboveAllowance(gross) {
+  _aboveAllowance(gross) {
     return (gross - this.payeThresholds["PA"]) * this.payeRates["basic"]
   };
 
-  aboveBasic(gross) {
-    return (gross - this.payeThresholds["basic"] + this.reducePersonalAllowance(gross)) * this.payeRates["higher"]
+  _aboveBasic(gross) {
+    return (gross - this.payeThresholds["basic"] + this._reducePersonalAllowance(gross)) * this.payeRates["higher"]
   };
 
-  reducePersonalAllowance(gross) {
+  _reducePersonalAllowance(gross) {
     if(gross > this.allowanceReducer["min"]) {
       var reducedAllowance = this.payeThresholds["PA"]
       for (i = this.allowanceReducer["min"]; i < gross; i += 2) {
         reducedAllowance --
       }
+      return (reducedAllowance > 0 ? this.payeThresholds["PA"] - reducedAllowance : this.payeThresholds["PA"]); 
+    } else {
+    return 0
     }
-    return (reducedAllowance > 0 ? this.payeThresholds["PA"] - reducedAllowance : 0); 
   };
 };
 
