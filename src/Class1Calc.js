@@ -10,8 +10,10 @@ class Class1Calc {
         return(this.aboveUEL(gross) + this.primaryBandNI())
       } else if(gross > this.class1Thresholds["PT"]) {
         return this.abovePT(gross)
+      } else if(gross > 0) {
+        return 0
       } else {
-      return 0.00
+        return "Enter a positive value"
       }
     }
 
