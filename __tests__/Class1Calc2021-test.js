@@ -1,9 +1,9 @@
 const { clearUpdateCacheExperimentalAsync } = require("expo-updates");
 const { interpolate } = require("react-native-reanimated");
 
-import Class1Calc from '../src/Class1Calc';
+import Class1Calc2021 from '../src/Class1Calc2021';
 
-const calc = new Class1Calc();
+const calc = new Class1Calc2021();
 
 it('returns zero deduction under the threshold', () => {
   expect(calc.class1NI(5000)).toBe(0);

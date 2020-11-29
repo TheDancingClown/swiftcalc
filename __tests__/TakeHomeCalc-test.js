@@ -1,8 +1,8 @@
 import TakeHomeCalc from '../src/TakeHomeCalc'
 import PayeCalc from '../src/PayeCalc'
-import Class1Calc from '../src/Class1Calc';
+import Class1Calc2021 from '../src/Class1Calc2021';
 
-const nICalc = new Class1Calc(), 
+const nICalc = new Class1Calc2021(), 
 payeCalc = new PayeCalc(), 
 calc = new TakeHomeCalc(payeCalc, nICalc)
 
