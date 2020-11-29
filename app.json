@@ -1,0 +1,12 @@
+{
+  "name": "swiftcalc",
+  "displayName": "swiftcalc",
+  "expo": {
+    "name": "swiftcalc",
+    "slug": "swiftcalc",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
