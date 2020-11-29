@@ -23,5 +23,9 @@ it('reduces the personal allowance', () => {
 
 it('the allowance cannot be less than zero', () => {
   expect(calc.paye(130000)).toBe(44500)
-})
+});
+
+it('deducts tax at additional rate', () => {
+  expect(calc.paye(175000)).toBe(63750)
+});
 
