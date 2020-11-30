@@ -14,9 +14,9 @@ Clone the app and navigate into the directory
 git clone https://github.com/TheDancingClown/swiftcalc
 cd swiftcalc
 ````
-Install Expo CLI
+Install Dependencies
 ````
-npm install -g expo-cli
+npm install
 ````
 ## To Use
 ````
