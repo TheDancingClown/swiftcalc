@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header'
 import UserEntryField from './components/UserEntryField'
 import CalculateBtn from './components/CalculateBtn'
+import ResultsDisplay from './components/ResultsDisplay'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Header />
       <UserEntryField />
       <CalculateBtn />
+      <ResultsDisplay />
       <StatusBar style="auto" />
     </View>
   );
