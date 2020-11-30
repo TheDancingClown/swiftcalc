@@ -3,12 +3,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header'
 import UserEntryField from './components/UserEntryField'
+import CalculateBtn from './components/CalculateBtn'
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header />
       <UserEntryField />
+      <CalculateBtn />
       <StatusBar style="auto" />
     </View>
   );

@@ -16,14 +16,14 @@ const UserEntryField = () => {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 23,
+    alignItems: 'center',
   },
   textInput: {
     textAlign: "center",
     margin: 15,
-    marginLeft: 60,
-    marginRight: 60,
+    width: 200,
     height: 40,
-    borderColor: '#7a42f4',
+    borderColor: 'lightgray',
     borderWidth: 1,
   },
 });
