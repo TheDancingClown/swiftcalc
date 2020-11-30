@@ -1,10 +1,6 @@
-import TakeHomeCalc from '../src/TakeHomeCalc'
-import PayeCalc2020 from '../src/2020/PayeCalc2020'
-import Class1Calc2020 from '../src/2020/Class1Calc2020';
+import TakeHomeCalc2020 from '../src/2020/TakeHomeCalc2020'
 
-const nICalc = new Class1Calc2020(), 
-payeCalc = new PayeCalc2020(), 
-calc = new TakeHomeCalc(payeCalc, nICalc)
+const calc = new TakeHomeCalc2020()
 
 it('has no deduction under the personal allowance', () => {
   expect(calc.takeHome(5000)).toBe(5000);

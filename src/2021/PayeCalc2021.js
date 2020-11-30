@@ -1,6 +1,6 @@
 import PayeCalc from '../PayeCalc';
 
-class Paye2021Calc extends PayeCalc{
+class PayeCalc2021 extends PayeCalc{
 
   constructor() {
     super()
@@ -10,4 +10,4 @@ class Paye2021Calc extends PayeCalc{
   };
 };
 
-export default Paye2021Calc;
+export default PayeCalc2021;
