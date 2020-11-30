@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: 'darkorange',
     padding: 15,
+    alignSelf: 'stretch',
   },
   text: {
     color: '#fff',
     fontSize: 23,
     textAlign: "center",
+    
   }
 });

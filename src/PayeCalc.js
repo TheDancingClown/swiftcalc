@@ -44,7 +44,7 @@ class PayeCalc {
   _reducePersonalAllowance(gross) {
     if(gross > this.allowanceReducer["min"]) {
       var reducedAllowance = this.payeThresholds["PA"];
-      for (i = this.allowanceReducer["min"]; i < gross; i += 2) {
+      for (var i = this.allowanceReducer["min"]; i < gross; i += 2) {
         reducedAllowance --;
       };
       return (reducedAllowance > 0 ? this.payeThresholds["PA"] - reducedAllowance : this.payeThresholds["PA"]); 

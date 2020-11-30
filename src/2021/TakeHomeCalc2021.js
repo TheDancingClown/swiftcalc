@@ -1,5 +1,5 @@
 import TakeHomeCalc from '../TakeHomeCalc';
-import PayeCalc20201 from './PayeCalc2021'
+import PayeCalc2021 from './PayeCalc2021'
 import Class1Calc2021 from './Class1Calc2021';
 
 class TakeHomeCalc2021 extends TakeHomeCalc {
