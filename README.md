@@ -35,3 +35,13 @@ As an employee,
 So I can better understand my salary raise,
 I want to calculate my take home for the following year
 ````
+````
+As an employee,
+So I can prepare for my yearly review,
+I want to calculate a minimum salary from my required take home pay
+````
+````
+As a job seeker,
+So I can narrow my job requirements,
+I want to calculate salary from take home pay for the next year
+````
