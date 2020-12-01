@@ -5,8 +5,7 @@ import Header from './components/Header'
 import UserEntryField from './components/UserEntryField'
 import CalculateBtn from './components/CalculateBtn'
 import ResultsDisplay from './components/ResultsDisplay'
-import TakeHomeCalc2020 from './src/2020/TakeHomeCalc2020'
-import TakeHomeCalc2021 from './src/2021/TakeHomeCalc2021'
+import Calculator from './src/Calculator'
 
 export default function App() {
   const [calculation, setCalculation] = useState(''), 
@@ -15,8 +14,9 @@ export default function App() {
   [isFuture, setIsFuture] = useState(false);
   
   const performCalculation = (userInput, year, calculator) => {
-    var calc = new Calculator(isFuture, isNetCalc)
-    return (calc.takeHome(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
+    const calc = new Calculator();
+    var selection = calc.select(isFuture, isNetCalc)
+    return (selection.calculate(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
   }
 
   const toggleCalc = () => setIsNetCalc(previousState => !previousState),

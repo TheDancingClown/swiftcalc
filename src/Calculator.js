@@ -6,15 +6,15 @@ import ReverseCalc2021 from './2021/ReverseCalc2021'
 
 class Calculator {
 
-  select(currentYear, netCalc) {
+  select(futureYear, netCalc) {
     var selection
-    if(currentYear == true && netCalc == true){ 
+    if(futureYear == false && netCalc == false){ 
       selection = new TakeHomeCalc2020()
-    } else if(currentYear == true && netCalc == false){ 
+    } else if(futureYear == false && netCalc == true){ 
       selection = new ReverseCalc2020()
-    } else if(currentYear == false && netCalc == true) {
+    } else if(futureYear == true && netCalc == false) {
       selection = new TakeHomeCalc2021()
-    } else if(currentYear == false && netCalc == false) {
+    } else if(futureYear == true && netCalc == true) {
       selection = new ReverseCalc2021()
     }
     return selection

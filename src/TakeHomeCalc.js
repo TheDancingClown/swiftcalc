@@ -5,7 +5,7 @@ class TakeHomeCalc {
     this.class1Calc = class1Calc;
   };
 
-  takeHome(gross) {
+  calculate(gross) {
     return gross - this.class1Calc.class1NI(gross) - this.payeCalc.paye(gross);
   };
 };
