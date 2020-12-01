@@ -2,9 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Switch } from 'react-native';
 import Header from './components/Header'
-import UserEntryField from './components/UserEntryField'
-import CalculateBtn from './components/CalculateBtn'
-import ResultsDisplay from './components/ResultsDisplay'
 import Calculator from './src/Calculator'
 
 export default function App() {
@@ -32,7 +29,7 @@ export default function App() {
     
     <View style={styles.container}>
       <Header />
-      <Text styles = {styles.textInput}>Toggle to change the calculator type</Text>
+      <Text>Toggle to change the calculator type</Text>
       <Switch
         trackColor={{ true: "#767577", false: "#767577" }}
         thumbColor={isNetCalc ? "darkorange" : "darkorange"}
@@ -41,11 +38,11 @@ export default function App() {
         value={isNetCalc}
       />
       <Text style = {styles.displayResults}>{calculatorName}</Text>
-      <Text styles = {styles.textInput}>{entryInstructions}</Text>
+      <Text>{entryInstructions}</Text>
       <TextInput style = {styles.textInput} 
         onChangeText = {text => onChangeText(text)}
         value = {userInput} />
-      <Text styles = {styles.textInput}>Select the tax year</Text>
+      <Text>Select the tax year</Text>
       <Switch
         trackColor={{ true: "#767577", false: "#767577" }}
         thumbColor={isFuture ? "darkorange" : "darkorange"}
@@ -54,14 +51,12 @@ export default function App() {
         value={isFuture}
       />
       <Text style = {styles.displayResults}>{taxYear}</Text>
-      
-      
       <TouchableOpacity style={styles.submitButton} 
         onPress ={() => setCalculation(performCalculation(userInput))}>
           <Text style = {styles.submitButtonText}>Calculate</Text>
       </TouchableOpacity>
       <Text style = {styles.displayResults} >{calculation}</Text>
-      <StatusBar style="auto" />
+      <StatusBar style = "auto" />
     </View>
   );
 }
