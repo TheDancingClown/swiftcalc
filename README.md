@@ -22,7 +22,7 @@ npm install
 ````
 expo start
 ````
-Follow the instructions to either scan the QR code to run on device, run in browser or on an emulator (needs xCode or Android Studio)
+Follow the instructions to either scan the QR code to run on device (need to install Expo on your device), run in browser or on an emulator (needs xCode or Android Studio)
 ## Specifications
 ```
 As an employee,
