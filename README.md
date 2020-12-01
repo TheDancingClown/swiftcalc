@@ -1,6 +1,7 @@
 # swiftcalc
 Learning React Native. 
-A calculator that shows your UK net salary after tax and NI for either the 2019/20 or 2020/21 year.
+A calculator that shows your UK net salary after tax and NI for either the 2019/20 or 2020/21 year.  
+![screenshot](public/androidscreenshot.png)
 ## Built With
 * Create Native React App
 * Javascript

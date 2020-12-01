@@ -14,11 +14,12 @@ export default function App() {
   [isFuture, setIsFuture] = useState(false);
   
   const performCalculation = (userInput, year, calculator) => {
-    const calc = new Calculator();
-    var selection = calc.select(isFuture, isNetCalc)
-    var calculatedFigure = selection.calculate(userInput)
+    const calc = new Calculator(),
+    selection = calc.select(isFuture, isNetCalc),
+    calculatedFigure = selection.calculate(userInput),
+    formattedFigure = new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP', minumumFractionDigits: 2}).format(calculatedFigure);
     return isNaN(calculatedFigure) ? 'Please enter a positive value' :
-     (calculatedFigure).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
+     formattedFigure
   }
 
   const toggleCalc = () => setIsNetCalc(previousState => !previousState),
