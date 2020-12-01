@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'darkorange',
     padding: 15,
     alignSelf: 'stretch',
+    marginBottom: 15,
   },
   text: {
     color: '#fff',

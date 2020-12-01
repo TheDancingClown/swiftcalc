@@ -13,7 +13,6 @@ export default function App() {
   [userInput, onChangeText] = useState(''),
   [isEnabled, setIsEnabled] = useState(false);
 
-  const calc = new TakeHomeCalc2020();
   const performCalculation = (userInput) => {
     var calc
     isEnabled ? calc = new TakeHomeCalc2021() : calc = new TakeHomeCalc2020()
@@ -27,10 +26,11 @@ export default function App() {
     
     <View style={styles.container}>
       <Header />
-
+      <Text styles = {styles.textInput}>Enter a salary figure</Text>
       <TextInput style = {styles.textInput} 
         onChangeText = {text => onChangeText(text)}
         value = {userInput} />
+      <Text styles = {styles.textInput}>Toggle to change the tax year</Text>
       <Switch
         trackColor={{ true: "#767577", false: "#767577" }}
         thumbColor={isEnabled ? "darkorange" : "darkorange"}
@@ -40,7 +40,7 @@ export default function App() {
       />
       <TouchableOpacity style={styles.submitButton} 
         onPress ={() => setCalculation(performCalculation(userInput))}>
-          <Text style = {styles.submitButtonText}>{isEnabled ? 'Calculate 2020/21 Take Home Pay' : 'Calculate 2019/20 Take Home Pay'}</Text>
+          <Text style = {styles.submitButtonText}>{isEnabled ? 'Calculate take-home pay for 2020/21' : 'Calculate take-home pay for 2019/20'}</Text>
       </TouchableOpacity>
       <Text style = {styles.displayResults} >{calculation}</Text>
       <StatusBar style="auto" />
@@ -83,5 +83,5 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 15,
     textAlign: 'center',
-  }
+  },
 });
