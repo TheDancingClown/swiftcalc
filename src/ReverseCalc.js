@@ -6,12 +6,12 @@ class ReverseCalc {
     this.calc = takeHomeCalc;
   };
 
-  calculateSalaryFromMonthly(net) {
+  calculate(net) {
     var gross = 0
     var comparison = 0
     while (comparison < net * 12) {
       gross ++
-      comparison = this.calc.takeHome(gross)
+      comparison = this.calc.calculate(gross)
     }
     return gross
   };

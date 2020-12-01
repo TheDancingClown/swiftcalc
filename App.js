@@ -5,42 +5,57 @@ import Header from './components/Header'
 import UserEntryField from './components/UserEntryField'
 import CalculateBtn from './components/CalculateBtn'
 import ResultsDisplay from './components/ResultsDisplay'
-import TakeHomeCalc2020 from './src/2020/TakeHomeCalc2020'
-import TakeHomeCalc2021 from './src/2021/TakeHomeCalc2021'
+import Calculator from './src/Calculator'
 
 export default function App() {
   const [calculation, setCalculation] = useState(''), 
   [userInput, onChangeText] = useState(''),
-  [isEnabled, setIsEnabled] = useState(false);
-
-  const performCalculation = (userInput) => {
-    var calc
-    isEnabled ? calc = new TakeHomeCalc2021() : calc = new TakeHomeCalc2020()
-    return (calc.takeHome(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
+  [isNetCalc, setIsNetCalc] = useState(false),
+  [isFuture, setIsFuture] = useState(false);
+  
+  const performCalculation = (userInput, year, calculator) => {
+    const calc = new Calculator();
+    var selection = calc.select(isFuture, isNetCalc)
+    return (selection.calculate(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
   }
 
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleCalc = () => setIsNetCalc(previousState => !previousState),
+  toggleYear = () => setIsFuture(previousState => !previousState),
+  taxYear = isFuture ? '2020/21' : '2019/20',
+  calculatorName = isNetCalc ? 'Salary Calculator' : 'Take Home Calculator',
+  entryInstructions = isNetCalc ? 'Enter a monthly take home figure' : 'Enter an annual salary figure';
 
-  
   return (
     
     <View style={styles.container}>
       <Header />
-      <Text styles = {styles.textInput}>Enter a salary figure</Text>
+      <Text styles = {styles.textInput}>Toggle to change the calculator</Text>
+      <Switch
+        trackColor={{ true: "#767577", false: "#767577" }}
+        thumbColor={isNetCalc ? "darkorange" : "darkorange"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleCalc}
+        value={isNetCalc}
+      />
+      <Text style = {styles.displayResults}>{calculatorName}</Text>
+      <Text styles = {styles.textInput}>{entryInstructions}</Text>
       <TextInput style = {styles.textInput} 
         onChangeText = {text => onChangeText(text)}
         value = {userInput} />
-      <Text styles = {styles.textInput}>Toggle to change the tax year</Text>
+      <Text styles = {styles.textInput}>Select the tax year</Text>
       <Switch
         trackColor={{ true: "#767577", false: "#767577" }}
-        thumbColor={isEnabled ? "darkorange" : "darkorange"}
+        thumbColor={isFuture ? "darkorange" : "darkorange"}
         ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
+        onValueChange={toggleYear}
+        value={isFuture}
       />
+      <Text style = {styles.displayResults}>{taxYear}</Text>
+      
+      
       <TouchableOpacity style={styles.submitButton} 
         onPress ={() => setCalculation(performCalculation(userInput))}>
-          <Text style = {styles.submitButtonText}>{isEnabled ? 'Calculate take-home pay for 2020/21' : 'Calculate take-home pay for 2019/20'}</Text>
+          <Text style = {styles.submitButtonText}>Calculate</Text>
       </TouchableOpacity>
       <Text style = {styles.displayResults} >{calculation}</Text>
       <StatusBar style="auto" />

@@ -9,10 +9,6 @@ class TakeHomeCalc2020 extends TakeHomeCalc {
     this.payeCalc = new PayeCalc2020();
     this.class1Calc = new Class1Calc2020();
   };
-
-  takeHome(gross) {
-    return gross - this.class1Calc.class1NI(gross) - this.payeCalc.paye(gross);
-  };
 };
 
 export default TakeHomeCalc2020;
