@@ -16,7 +16,9 @@ export default function App() {
   const performCalculation = (userInput, year, calculator) => {
     const calc = new Calculator();
     var selection = calc.select(isFuture, isNetCalc)
-    return (selection.calculate(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
+    var calculatedFigure = selection.calculate(userInput)
+    return isNaN(calculatedFigure) ? 'Please enter a positive value' :
+     (calculatedFigure).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
   }
 
   const toggleCalc = () => setIsNetCalc(previousState => !previousState),
@@ -29,7 +31,7 @@ export default function App() {
     
     <View style={styles.container}>
       <Header />
-      <Text styles = {styles.textInput}>Toggle to change the calculator</Text>
+      <Text styles = {styles.textInput}>Toggle to change the calculator type</Text>
       <Switch
         trackColor={{ true: "#767577", false: "#767577" }}
         thumbColor={isNetCalc ? "darkorange" : "darkorange"}

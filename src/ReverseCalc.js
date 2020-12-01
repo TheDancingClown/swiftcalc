@@ -7,8 +7,9 @@ class ReverseCalc {
   };
 
   calculate(net) {
-    var gross = 0
+    var gross = net * 11
     var comparison = 0
+    //try to find a better way to do this. Slow on high salaries
     while (comparison < net * 12) {
       gross ++
       comparison = this.calc.calculate(gross)
