@@ -9,14 +9,14 @@ import TakeHomeCalc2020 from './src/2020/TakeHomeCalc2020'
 import TakeHomeCalc2021 from './src/2021/TakeHomeCalc2021'
 
 export default function App() {
-  const [calculation, setCalculation] = useState(0), 
+  const [calculation, setCalculation] = useState(''), 
   [userInput, onChangeText] = useState(''),
   [isEnabled, setIsEnabled] = useState(false);
 
   const calc = new TakeHomeCalc2020();
   const performCalculation = (userInput) => {
     var calc
-    isEnabled ? calc = new TakeHomeCalc2020() : calc = new TakeHomeCalc2021()
+    isEnabled ? calc = new TakeHomeCalc2021() : calc = new TakeHomeCalc2020()
     return (calc.takeHome(userInput)).toLocaleString("en-GB", {style: 'currency', currency: 'GBP', minumumFractionDigits: 2})
   }
 
