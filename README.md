@@ -49,3 +49,5 @@ I want to calculate salary from take home pay for the next year
 * Extract react components for cleaner code/maintainability and use props for data transfer
 * Store tax rates in a json instead of new calculator classes - easier to maintain
 * Fix method for reverse calculator to improve speed
+* Make it clearer whether to input monthly/yearly figures
+* Add more ouput options to show weekly/monthly/annual
