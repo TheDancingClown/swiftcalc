@@ -24,7 +24,7 @@ export default function App() {
   taxYear = isFuture ? '2020/21' : '2019/20',
   calculatorName = isNetCalc ? 'Salary Calculator' : 'Take Home Calculator',
   entryInstructions = isNetCalc ? 'Enter a monthly take home figure' : 'Enter an annual salary figure';
-
+  
   return (
     
     <View style={styles.container}>
